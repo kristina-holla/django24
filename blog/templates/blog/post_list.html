@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
-    <body style="background-color:powderblue;"></body>
     <head>
-        <title>Kika's blog</title>
+        <title>Django Girls blog</title>
     </head>
     <body>
-        <h1><font color="green">Kikin novy blog</font></h1>
-        <h2><u>django girls</u></h2>
-        <p>Vitaj na mojom blogu!</p>
-        <p>Dufam ze sa ti bude pacit</p>
-        <br>
-        <em>Volam sa Kika</em>
-        <br>
-        <strong>Neviem co robim</strong>
-        <p>To je vsetko</p>
+        <header>
+            <h1><a href="/">Django Girls Blog</a></h1>
+        </header>
+
+        {% for post in posts %}
+            <article>
+                <time>published: {{ post.published_date }}</time>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </article>
+        {% endfor %}
     </body>
-    <img src="https://img.cas.sk/cas/900px/3782919.jpg/zahada-dinosaurus-evolucia.jpg" alt="Dinosaurus" />
 </html>
